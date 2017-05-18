@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	html, body{
+		width: 99%;
+		height: 99%;
+	}
+
+	.blok{
+		width: 30%;
+		height: 30%;
+		border: 1px solid black;
+		margin-left: 33%;
+		overflow-y: scroll;
+	}
+	
+</style>
+</head>
+<body>
+<div class="blok" id="blok">
+	<script>
+		function showOnce(){
+			document.getElementById("blok").innerHTML+=("setTimeout - ");
+		}
+
+		setTimeout(showOnce, 3000);
+		
+		function showMore(){
+			document.getElementById("blok").innerHTML+=("setInterval - ");
+		}
+		
+		var interval = setInterval(showMore, 1000);
+		
+		// Interval uitzetten
+		
+		//clearInterval(interval);
+	</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	html, body{
+		width: 99%;
+		height: 99%;
+	}
+	.counter{
+		width: 5%;
+		height: 10%;
+		border-radius: 50%;
+		border: 1px solid black;
+		margin-top: 20%;
+		margin-left: 46%;
+    	text-align:center;
+		line-height: 60px;
+		background-color: black;
+		font-size: 2rem;
+	}
+
+</style>
+</head>
+<body>
+<div class="counter" id="counter">
+	<script>
+		var teller = 0;
+		
+		function addUp(){
+			teller = teller + 1;
+			document.getElementById("counter").innerHTML= (teller);
+			document.body.style.color= "#fff";
+			
+			if(teller > 99) {
+				clearInterval(stop);
+				document.body.style.background = "#000";
+				document.body.style.color= "#000";
+			}
+		} 
+		
+		var stop = setInterval(addUp, 50);
+	</script>
+</div>
+</body>
+</html>
