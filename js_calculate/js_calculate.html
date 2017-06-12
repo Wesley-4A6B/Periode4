@@ -49,13 +49,12 @@
 			   var operations = {
 				 '+' : arr.reduce((a, b) => parseFloat(a) + parseFloat(b)),
 				 '-' : arr.reduce((a, b) => parseFloat(a) - parseFloat(b)),
-				 '*' : arr.reduce((a, b) => parseFloat(a) * parseFloat(b))
-
-				   
+				 '*' : arr.reduce((a, b) => parseFloat(a) * parseFloat(b)),
+				 '/' : arr.reduce((a, b) => parseFloat(a) / parseFloat(b))
 			   }
 			   var answer = operations[document.getElementById('select').selectedOptions[0].text];
 
-			   document.getElementById('answer').innerHTML = "Resultaat: " + answer  ;
+			   document.getElementById('answer').innerHTML = "Resultaat: " + answer;
 			}
 		</script>
 		
