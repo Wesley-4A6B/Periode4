@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta http-equiv="content-type" content="text/html" charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <style>
+			html, body{
+				width: 99%;
+				height: 97%;
+			}
+			.uitkomst{
+				margin-top: 5%;
+				margin-left: 5%;
+				width: 80%;
+				height: 20%;
+			}
+			
+			#answer_blok{
+				width: 100%;
+				height: 15%;
+				background: black;
+				font-size: 2rem;
+				color: white;
+			}
+        </style>
+    </head>
+    <body>
+		<h1>Calculate</h1><br>
+		Numbers: <input type="text" value="1, 2, 5" name="invoer" id="fill"><br><br>
+		Operation:
+		<select name="select" id="select">
+		  <option value="plus">+</option>
+		  <option value="min">-</option>
+		  <option value="keer">*</option>
+		  <option value="delen">/</option>
+		</select><br><br>
+		<button onclick="count()">Count</button>
+		<br><br>
+		
+		<div id="answer_blok">
+			<div id="answer"> Resultaat: </div>
+		</div>
+		
+			
+ 		<script>
+			function count() {
+			   var arr = document.getElementById('fill').value.split(",");
+			   var operations = {
+				 '+' : arr.reduce((a, b) => parseFloat(a) + parseFloat(b))
+			   }
+			   var answer = operations[document.getElementById('select').selectedOptions[0].text];
+
+			   document.getElementById('answer').innerHTML = "Resultaat: " + answer  ;
+			}
+		</script>
+		
+    </body>
+</html>
