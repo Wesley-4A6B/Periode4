@@ -48,7 +48,8 @@
 			   var arr = document.getElementById('fill').value.split(",");
 			   var operations = {
 				 '+' : arr.reduce((a, b) => parseFloat(a) + parseFloat(b)),
-				 '-' : arr.reduce((a, b) => parseFloat(a) - parseFloat(b))
+				 '-' : arr.reduce((a, b) => parseFloat(a) - parseFloat(b)),
+				 '*' : arr.reduce((a, b) => parseFloat(a) * parseFloat(b))
 
 				   
 			   }
