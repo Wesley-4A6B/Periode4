@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta http-equiv="content-type" content="text/html" charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="js_calculate.css">
+    </head>
+    <body>
+		<h1>Calculate</h1><br>
+		Numbers: <input type="text" value="3, 4, 5" name="invoer" id="fill"><br><br>
+		Operation:
+		<select name="select" id="select">
+		  <option value="plus">+</option>
+		  <option value="min">-</option>
+		  <option value="keer">*</option>
+		  <option value="delen">/</option>
+		</select><br><br>
+		<button onclick="buttonclick()">Count</button>
+		<br><br>
+		
+		<div id="answer_blok">
+			<div id="answer"> Resultaat: </div>
+		</div>
+		
+		<script>
+			
+			function buttonclick(){
+				var selector = document.getElementById("select").value;
+				if(selector == "plus"){
+					optellen();
+				} else if(selector == "min"){
+					aftrekken();
+				} else if(selector == "keer"){
+					vermenigvuldigen();
+				} else if(selector == "delen"){
+					delen();
+				}
+				
+				console.log(selector)
+			}
+			
+			function optellen(){
+				var selector = document.getElementById("select").value;
+				var str = document.getElementById("fill").value;
+				var resultaat = str.split(",");
+				var totaal = 0;
+				for (var i = 0; i < resultaat.length; i++) { 
+				totaal = totaal + parseFloat(resultaat[i]);
+				}
+				document.getElementById('answer').innerHTML = "Resultaat: " + totaal;
+			}
+			
+			function aftrekken(){
+				var selector = document.getElementById("select").value;
+				var str = document.getElementById("fill").value;
+				var resultaat = str.split(",");
+				var totaal = resultaat[0];
+				for (var i = 1; i < resultaat.length; i++) { 
+				totaal = totaal - parseFloat(resultaat[i]);
+				}
+				document.getElementById('answer').innerHTML = "Resultaat: " + totaal;
+			}
+			
+			function vermenigvuldigen(){
+				var selector = document.getElementById("select").value;
+				var str = document.getElementById("fill").value;
+				var resultaat = str.split(",");
+				var totaal = resultaat[0];
+				for (var i = 1; i < resultaat.length; i++) { 
+				totaal = totaal * parseFloat(resultaat[i]);
+				}
+				document.getElementById('answer').innerHTML = "Resultaat: " + totaal;
+			}
+			
+			function delen(){
+				var selector = document.getElementById("select").value;
+				var str = document.getElementById("fill").value;
+				var resultaat = str.split(",");
+				var totaal = resultaat[0];
+				for (var i = 1; i < resultaat.length; i++) { 
+				totaal = totaal / parseFloat(resultaat[i]);
+				}
+				document.getElementById('answer').innerHTML = "Resultaat: " + totaal;
+			}
+		
+		</script>	
+    </body>
+</html>
